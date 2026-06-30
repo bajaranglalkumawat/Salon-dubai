@@ -21,42 +21,42 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 15%;
 
-    --primary: 0 0% 15%;
+    --primary: 270 100% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 38 92% 70%;
+    --secondary: 320 100% 60%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 0 0% 90%;
     --muted-foreground: 0 0% 50%;
 
-    --accent: 38 92% 70%;
-    --accent-foreground: 0 0% 15%;
+    --accent: 320 100% 60%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 92%;
-    --input: 0 0% 96%;
-    --ring: 38 92% 70%;
+    --border: 270 50% 90%;
+    --input: 270 50% 96%;
+    --ring: 320 100% 60%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    --sidebar-background: 270 50% 96%;
 
     --sidebar-foreground: 0 0% 15%;
 
-    --sidebar-primary: 0 0% 15%;
+    --sidebar-primary: 270 100% 45%;
 
     --sidebar-primary-foreground: 0 0% 100%;
 
-    --sidebar-accent: 38 92% 70%;
+    --sidebar-accent: 320 100% 60%;
 
-    --sidebar-accent-foreground: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 100%;
 
-    --sidebar-border: 0 0% 92%;
+    --sidebar-border: 270 50% 90%;
 
-    --sidebar-ring: 38 92% 70%;
+    --sidebar-ring: 320 100% 60%;
   }
 
   .dark {
@@ -125,11 +125,11 @@
   }
 
   .btn-gold {
-    @apply bg-gold-500 hover:bg-gold-600 text-white font-semibold px-6 py-3 rounded-lg transition duration-300 shadow-lg hover:shadow-xl;
+    @apply bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold px-6 py-3 rounded-full transition duration-300 shadow-lg hover:shadow-xl;
   }
 
   .btn-outline-gold {
-    @apply border-2 border-gold-500 text-gold-500 hover:bg-gold-50 font-semibold px-6 py-3 rounded-lg transition duration-300;
+    @apply border-2 border-purple-600 text-purple-600 hover:bg-purple-50 font-semibold px-6 py-3 rounded-full transition duration-300;
   }
 
   .section-padding {

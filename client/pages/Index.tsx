@@ -67,24 +67,24 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-white/20 shadow-lg">
+      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-purple-200/30 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gold-500 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center shadow-lg">
               <span className="text-white font-serif font-bold text-lg">R</span>
             </div>
             <div>
-              <h1 className="font-serif font-bold text-black hidden md:block">The Royalty</h1>
-              <p className="text-gold-500 text-xs font-semibold">Beauty Salon</p>
+              <h1 className="font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600 hidden md:block">The Royalty</h1>
+              <p className="text-purple-600 text-xs font-semibold">Beauty Salon</p>
             </div>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex gap-8 items-center">
-            <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-gold-500 font-medium transition">Services</button>
-            <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-gold-500 font-medium transition">About</button>
-            <button onClick={() => scrollToSection('gallery')} className="text-gray-700 hover:text-gold-500 font-medium transition">Gallery</button>
-            <button onClick={() => scrollToSection('booking')} className="bg-gold-500 hover:bg-gold-600 text-white px-6 py-2 rounded-lg font-medium transition">Book Now</button>
+            <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-purple-600 font-medium transition">Services</button>
+            <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-purple-600 font-medium transition">About</button>
+            <button onClick={() => scrollToSection('gallery')} className="text-gray-700 hover:text-purple-600 font-medium transition">Gallery</button>
+            <button onClick={() => scrollToSection('booking')} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-2 rounded-full font-medium transition shadow-lg">Book Now</button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -95,22 +95,22 @@ export default function Index() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-white/90 backdrop-blur-xl border-t border-white/20 py-4 px-4">
+          <div className="md:hidden bg-white/90 backdrop-blur-xl border-t border-purple-200/30 py-4 px-4">
             <div className="flex flex-col gap-4">
-              <button onClick={() => scrollToSection('services')} className="text-left text-gray-700 hover:text-gold-500 font-medium">Services</button>
-              <button onClick={() => scrollToSection('about')} className="text-left text-gray-700 hover:text-gold-500 font-medium">About</button>
-              <button onClick={() => scrollToSection('gallery')} className="text-left text-gray-700 hover:text-gold-500 font-medium">Gallery</button>
-              <button onClick={() => scrollToSection('booking')} className="bg-gold-500 text-white px-6 py-2 rounded-lg font-medium w-full">Book Now</button>
+              <button onClick={() => scrollToSection('services')} className="text-left text-gray-700 hover:text-purple-600 font-medium">Services</button>
+              <button onClick={() => scrollToSection('about')} className="text-left text-gray-700 hover:text-purple-600 font-medium">About</button>
+              <button onClick={() => scrollToSection('gallery')} className="text-left text-gray-700 hover:text-purple-600 font-medium">Gallery</button>
+              <button onClick={() => scrollToSection('booking')} className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full font-medium w-full">Book Now</button>
             </div>
           </div>
         )}
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-br from-white via-gray-50 to-gray-100">
+      <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-br from-purple-50 via-white to-pink-50">
         <div className="absolute inset-0 backdrop-blur-3xl z-0" />
-        <div className="absolute top-20 right-0 w-96 h-96 bg-gold-200 rounded-full filter blur-3xl opacity-30 z-0 animate-pulse" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold-200 rounded-full filter blur-3xl opacity-30 z-0 animate-pulse" />
+        <div className="absolute top-20 right-0 w-96 h-96 bg-purple-300 rounded-full filter blur-3xl opacity-20 z-0 animate-pulse" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-pink-300 rounded-full filter blur-3xl opacity-20 z-0 animate-pulse" />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-t from-white/50 to-transparent z-0" />
 
         <div className="max-w-6xl mx-auto px-4 md:px-8 z-10">
@@ -120,12 +120,12 @@ export default function Index() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <p className="text-gold-500 font-semibold mb-4 uppercase tracking-wider">Welcome to Luxury</p>
-            <h1 className="heading-serif text-4xl md:text-6xl lg:text-7xl text-black mb-6">
-              Best Beauty Salon in Karama Dubai
+            <p className="text-purple-600 font-semibold mb-4 uppercase tracking-widest text-sm">Luxury Salon Destination</p>
+            <h1 className="heading-serif text-5xl md:text-7xl lg:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-purple-900 via-purple-700 to-pink-600 mb-6 leading-tight">
+              The Royalty Beauty Salon
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-              Experience premium beauty, hair, and skincare services with our professional salon experts. Elevate your beauty journey.
+            <p className="text-lg md:text-xl text-gray-700 mb-10 max-w-2xl mx-auto font-light">
+              Experience the finest in beauty, hair, and skincare services with our elite stylists. Where elegance meets excellence.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -133,7 +133,7 @@ export default function Index() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection('booking')}
-                className="btn-gold"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold px-8 py-3 rounded-full transition shadow-lg hover:shadow-2xl"
               >
                 Book Appointment
               </motion.button>
@@ -141,7 +141,7 @@ export default function Index() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="tel:+971564629378"
-                className="btn-outline-gold"
+                className="border-2 border-purple-600 text-purple-600 hover:bg-purple-50 font-semibold px-8 py-3 rounded-full transition duration-300"
               >
                 Call Now
               </motion.a>
@@ -149,7 +149,7 @@ export default function Index() {
 
             <div className="flex flex-col md:flex-row gap-8 justify-center text-left">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-gold-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
                   <Star className="text-white" size={24} fill="white" />
                 </div>
                 <div>
@@ -158,7 +158,7 @@ export default function Index() {
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-gold-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
                   <Clock className="text-white" size={24} />
                 </div>
                 <div>
@@ -180,8 +180,8 @@ export default function Index() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <p className="text-gold-500 font-semibold uppercase tracking-wider mb-4">Our Excellence</p>
-            <h2 className="heading-serif text-4xl md:text-5xl text-black mb-4">Premium Services</h2>
+            <p className="text-purple-600 font-semibold uppercase tracking-widest text-sm mb-4">Our Excellence</p>
+            <h2 className="heading-serif text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-pink-600 mb-4">Premium Services</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Discover our comprehensive range of beauty and wellness services designed to enhance your natural beauty.
             </p>
@@ -199,15 +199,15 @@ export default function Index() {
               return (
                 <motion.div key={index} variants={itemVariants}>
                   <div className="relative group cursor-pointer">
-                    <div className="absolute inset-0 bg-gradient-to-br from-gold-400 to-gold-600 rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition duration-500" />
-                    <div className="relative bg-white/40 backdrop-blur-md border border-white/20 rounded-xl p-8 text-center hover:bg-white/50 transition duration-500 hover:border-gold-300/40">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition duration-500" />
+                    <div className="relative bg-white/40 backdrop-blur-md border border-purple-200/40 rounded-xl p-8 text-center hover:bg-white/60 transition duration-500 hover:border-purple-300/60">
                       <div className="relative mb-6">
-                        <div className="absolute inset-0 bg-gradient-to-br from-gold-400 to-gold-500 rounded-lg opacity-0 group-hover:opacity-100 transition duration-500 blur" />
-                        <div className="relative w-16 h-16 mx-auto bg-gradient-to-br from-gold-400 to-gold-500 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition duration-500">
+                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg opacity-0 group-hover:opacity-100 transition duration-500 blur" />
+                        <div className="relative w-16 h-16 mx-auto bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition duration-500 shadow-lg">
                           <Icon className="text-white" size={32} />
                         </div>
                       </div>
-                      <h3 className="font-semibold text-black text-lg group-hover:text-gold-600 transition">{service.name}</h3>
+                      <h3 className="font-semibold text-black text-lg group-hover:text-purple-700 transition">{service.name}</h3>
                     </div>
                   </div>
                 </motion.div>
@@ -218,7 +218,7 @@ export default function Index() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="section-padding bg-gradient-to-br from-gray-50 to-white">
+      <section id="about" className="section-padding bg-gradient-to-br from-purple-50 via-white to-pink-50">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -227,9 +227,9 @@ export default function Index() {
               viewport={{ once: true }}
             >
               <div className="relative rounded-2xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-gold-400 via-gold-500 to-gold-600 animate-pulse" />
-                <div className="relative aspect-square bg-gradient-to-br from-gold-400/80 to-gold-600/80 backdrop-blur-sm flex items-center justify-center group">
-                  <Sparkles className="text-white" size={80} className="animate-spin group-hover:animate-pulse" />
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500 via-pink-500 to-purple-600 animate-pulse" />
+                <div className="relative aspect-square bg-gradient-to-br from-purple-500/80 to-pink-600/80 backdrop-blur-sm flex items-center justify-center group">
+                  <Sparkles className="text-white" size={80} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
                 </div>
               </div>
@@ -240,8 +240,8 @@ export default function Index() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <p className="text-gold-500 font-semibold uppercase tracking-wider mb-4">About Us</p>
-              <h2 className="heading-serif text-4xl md:text-5xl text-black mb-6">The Royalty Beauty Salon</h2>
+              <p className="text-purple-600 font-semibold uppercase tracking-widest text-sm mb-4">About Us</p>
+              <h2 className="heading-serif text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-pink-600 mb-6">The Royalty Beauty Salon</h2>
               <p className="text-gray-600 text-lg mb-6 leading-relaxed">
                 At The Royalty Beauty Salon, we provide professional beauty services with experienced stylists and beauty experts. Our mission is to deliver exceptional beauty experiences that enhance your confidence and natural beauty.
               </p>
@@ -250,7 +250,7 @@ export default function Index() {
               </p>
               <div className="flex flex-col gap-4">
                 <div className="flex items-start gap-4">
-                  <div className="w-6 h-6 bg-gold-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <ChevronRight size={16} className="text-white" />
                   </div>
                   <div>
@@ -259,7 +259,7 @@ export default function Index() {
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-6 h-6 bg-gold-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <ChevronRight size={16} className="text-white" />
                   </div>
                   <div>
@@ -268,7 +268,7 @@ export default function Index() {
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-6 h-6 bg-gold-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <ChevronRight size={16} className="text-white" />
                   </div>
                   <div>
@@ -283,7 +283,7 @@ export default function Index() {
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="section-padding bg-white">
+      <section id="gallery" className="section-padding bg-gradient-to-br from-white via-purple-50 to-pink-50">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -291,8 +291,8 @@ export default function Index() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <p className="text-gold-500 font-semibold uppercase tracking-wider mb-4">Visual Excellence</p>
-            <h2 className="heading-serif text-4xl md:text-5xl text-black mb-4">Salon Gallery</h2>
+            <p className="text-purple-600 font-semibold uppercase tracking-widest text-sm mb-4">Visual Excellence</p>
+            <h2 className="heading-serif text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-pink-600 mb-4">Salon Gallery</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Take a glimpse into our luxurious salon space and the beautiful transformations we create.
             </p>
@@ -317,8 +317,8 @@ export default function Index() {
               return (
                 <motion.div key={index} variants={itemVariants}>
                   <div className="relative group rounded-xl overflow-hidden cursor-pointer h-64">
-                    <div className="absolute inset-0 bg-gradient-to-br from-gold-400 to-gold-600 opacity-0 group-hover:opacity-100 transition duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-br from-gold-300 to-gold-500 flex items-center justify-center group-hover:scale-110 transition transform duration-500">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-600 opacity-0 group-hover:opacity-100 transition duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center group-hover:scale-110 transition transform duration-500">
                       <Icon className="text-white" size={64} />
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
@@ -333,7 +333,7 @@ export default function Index() {
       </section>
 
       {/* Booking Section */}
-      <section id="booking" className="section-padding bg-gradient-to-br from-black to-gray-900 text-white">
+      <section id="booking" className="section-padding bg-gradient-to-br from-purple-900 via-purple-800 to-pink-900 text-white">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -341,7 +341,7 @@ export default function Index() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <p className="text-gold-400 font-semibold uppercase tracking-wider mb-4">Reserve Your Slot</p>
+            <p className="text-pink-300 font-semibold uppercase tracking-widest text-sm mb-4">Reserve Your Slot</p>
             <h2 className="heading-serif text-4xl md:text-5xl text-white mb-4">Book Your Appointment</h2>
             <p className="text-gray-300">
               Schedule your beauty appointment with us today and experience the luxury you deserve.
@@ -353,7 +353,7 @@ export default function Index() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             onSubmit={handleBooking}
-            className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 space-y-6 shadow-2xl hover:bg-white/15 transition duration-500"
+            className="bg-white/15 backdrop-blur-xl border border-white/30 rounded-2xl p-8 space-y-6 shadow-2xl hover:bg-white/20 transition duration-500"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -364,7 +364,7 @@ export default function Index() {
                   value={formData.name}
                   onChange={handleFormChange}
                   required
-                  className="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:bg-white/20 transition placeholder-white/50"
+                  className="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:bg-white/20 transition placeholder-white/50"
                   placeholder="Your name"
                 />
               </div>
@@ -376,7 +376,7 @@ export default function Index() {
                   value={formData.phone}
                   onChange={handleFormChange}
                   required
-                  className="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:bg-white/20 transition placeholder-white/50"
+                  className="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:bg-white/20 transition placeholder-white/50"
                   placeholder="+971 56 462 9378"
                 />
               </div>
@@ -429,7 +429,7 @@ export default function Index() {
               type="submit"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full bg-gold-500 hover:bg-gold-600 text-white font-bold py-3 rounded-lg transition"
+              className="w-full bg-gradient-to-r from-pink-400 to-purple-500 hover:from-pink-500 hover:to-purple-600 text-white font-bold py-3 rounded-full transition shadow-lg"
             >
               {bookingSubmitted ? '✓ Booking Confirmed!' : 'Book Appointment'}
             </motion.button>
@@ -438,7 +438,7 @@ export default function Index() {
       </section>
 
       {/* Contact Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-gradient-to-br from-white via-purple-50 to-pink-50">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -446,8 +446,8 @@ export default function Index() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <p className="text-gold-500 font-semibold uppercase tracking-wider mb-4">Get In Touch</p>
-            <h2 className="heading-serif text-4xl md:text-5xl text-black mb-4">Contact Us</h2>
+            <p className="text-purple-600 font-semibold uppercase tracking-widest text-sm mb-4">Get In Touch</p>
+            <h2 className="heading-serif text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-pink-600 mb-4">Contact Us</h2>
           </motion.div>
 
           <motion.div
@@ -459,8 +459,8 @@ export default function Index() {
           >
             <motion.div variants={itemVariants} className="text-center">
               <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-gold-400 to-gold-500 rounded-full opacity-0 group-hover:opacity-30 blur-xl transition duration-500 w-16 h-16 mx-auto" />
-                <div className="relative w-16 h-16 bg-gradient-to-br from-gold-400 to-gold-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl transition duration-500">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-30 blur-xl transition duration-500 w-16 h-16 mx-auto" />
+                <div className="relative w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl transition duration-500">
                   <MapPin className="text-white" size={28} />
                 </div>
               </div>
@@ -474,13 +474,13 @@ export default function Index() {
 
             <motion.div variants={itemVariants} className="text-center">
               <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-gold-400 to-gold-500 rounded-full opacity-0 group-hover:opacity-30 blur-xl transition duration-500 w-16 h-16 mx-auto" />
-                <div className="relative w-16 h-16 bg-gradient-to-br from-gold-400 to-gold-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl transition duration-500">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-30 blur-xl transition duration-500 w-16 h-16 mx-auto" />
+                <div className="relative w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl transition duration-500">
                   <Phone className="text-white" size={28} />
                 </div>
               </div>
               <h3 className="font-semibold text-black text-lg mb-2">Phone</h3>
-              <a href="tel:+971564629378" className="text-gray-600 hover:text-gold-500 font-semibold transition">
+              <a href="tel:+971564629378" className="text-gray-600 hover:text-purple-600 font-semibold transition">
                 +971 56 462 9378
               </a>
               <p className="text-gray-500 text-sm mt-2">Open Daily Until 10 PM</p>
@@ -488,8 +488,8 @@ export default function Index() {
 
             <motion.div variants={itemVariants} className="text-center">
               <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-gold-400 to-gold-500 rounded-full opacity-0 group-hover:opacity-30 blur-xl transition duration-500 w-16 h-16 mx-auto" />
-                <div className="relative w-16 h-16 bg-gradient-to-br from-gold-400 to-gold-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl transition duration-500">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-30 blur-xl transition duration-500 w-16 h-16 mx-auto" />
+                <div className="relative w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl transition duration-500">
                   <Clock className="text-white" size={28} />
                 </div>
               </div>
@@ -497,7 +497,7 @@ export default function Index() {
               <p className="text-gray-600 text-sm">
                 Open Daily<br />
                 Until 10 PM<br />
-                <span className="text-gold-500 font-semibold">4.9 ⭐ (295 Reviews)</span>
+                <span className="text-purple-600 font-semibold">4.9 ⭐ (295 Reviews)</span>
               </p>
             </motion.div>
           </motion.div>
@@ -572,8 +572,8 @@ export default function Index() {
             <div>
               <h4 className="font-semibold mb-4">Follow Us</h4>
               <div className="flex gap-4">
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold-500 transition">Instagram</a>
-                <a href="https://wa.me/971564629378" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold-500 transition">WhatsApp</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-500 transition">Instagram</a>
+                <a href="https://wa.me/971564629378" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-500 transition">WhatsApp</a>
               </div>
             </div>
           </div>
