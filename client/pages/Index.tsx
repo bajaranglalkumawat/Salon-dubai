@@ -108,6 +108,77 @@ export default function Index() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-br from-purple-50 via-white to-pink-50">
+        {/* Background Images with Motion */}
+        <div className="absolute inset-0 z-0">
+          {/* Left decorative image area */}
+          <motion.div
+            animate={{ y: [0, -20, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 w-96 h-96 rounded-3xl overflow-hidden shadow-2xl opacity-60"
+          >
+            <div className="w-full h-full bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 flex items-center justify-center">
+              <div className="text-center">
+                <Sparkles className="w-24 h-24 text-white/80 mx-auto mb-4" />
+                <p className="text-white/70 font-semibold">Hair Styling</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right decorative image area */}
+          <motion.div
+            animate={{ y: [0, 20, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute right-0 top-1/3 w-96 h-96 rounded-3xl overflow-hidden shadow-2xl opacity-60"
+          >
+            <div className="w-full h-full bg-gradient-to-br from-pink-400 via-pink-500 to-rose-600 flex items-center justify-center">
+              <div className="text-center">
+                <Brush className="w-24 h-24 text-white/80 mx-auto mb-4" />
+                <p className="text-white/70 font-semibold">Facial Glow</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Floating particles */}
+          <motion.div
+            animate={{
+              x: [0, 30, -20, 0],
+              y: [0, -50, -30, 0],
+              rotate: [0, 360]
+            }}
+            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+            className="absolute top-20 left-1/4 w-16 h-16 rounded-full bg-gradient-to-br from-purple-300 to-pink-300 shadow-xl opacity-40"
+          />
+
+          <motion.div
+            animate={{
+              x: [0, -40, 20, 0],
+              y: [0, 40, 20, 0],
+              rotate: [360, 0]
+            }}
+            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+            className="absolute bottom-32 right-1/4 w-20 h-20 rounded-full bg-gradient-to-br from-pink-300 to-purple-300 shadow-xl opacity-40"
+          />
+
+          <motion.div
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.6, 0.3]
+            }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-1/4 right-20 w-32 h-32 rounded-full bg-gradient-to-br from-purple-200 to-pink-200 blur-3xl"
+          />
+
+          <motion.div
+            animate={{
+              scale: [1, 1.3, 1],
+              opacity: [0.4, 0.7, 0.4]
+            }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute bottom-20 left-20 w-40 h-40 rounded-full bg-gradient-to-br from-pink-200 to-purple-200 blur-3xl"
+          />
+        </div>
+
+        {/* Original backdrop elements */}
         <div className="absolute inset-0 backdrop-blur-3xl z-0" />
         <div className="absolute top-20 right-0 w-96 h-96 bg-purple-300 rounded-full filter blur-3xl opacity-20 z-0 animate-pulse" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-pink-300 rounded-full filter blur-3xl opacity-20 z-0 animate-pulse" />
