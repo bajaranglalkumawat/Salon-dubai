@@ -1,5 +1,5 @@
 /** @import must precede all other statements */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -146,40 +146,84 @@
 }
 
 @keyframes glow-pulse {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(244, 160, 48, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(244, 160, 48, 0.6);
-  }
+  0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.4); }
+  50% { box-shadow: 0 0 60px rgba(236, 72, 153, 0.7); }
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-18px) rotate(3deg); }
+  66% { transform: translateY(-8px) rotate(-2deg); }
+}
+
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(18px) rotate(-3deg); }
+  66% { transform: translateY(8px) rotate(2deg); }
 }
 
 @keyframes shimmer {
-  0% {
-    background-position: -1000px 0;
-  }
-  100% {
-    background-position: 1000px 0;
-  }
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
 }
 
-.animate-glow-pulse {
-  animation: glow-pulse 2s ease-in-out infinite;
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.animate-float {
-  animation: float 3s ease-in-out infinite;
+@keyframes orb-drift {
+  0%   { transform: translate(0, 0) scale(1); }
+  25%  { transform: translate(30px, -40px) scale(1.1); }
+  50%  { transform: translate(-20px, -60px) scale(0.9); }
+  75%  { transform: translate(-40px, -20px) scale(1.05); }
+  100% { transform: translate(0, 0) scale(1); }
 }
 
-.animate-shimmer {
-  animation: shimmer 2s infinite;
+@keyframes orb-drift-2 {
+  0%   { transform: translate(0, 0) scale(1); }
+  25%  { transform: translate(-30px, 40px) scale(1.15); }
+  50%  { transform: translate(20px, 60px) scale(0.85); }
+  75%  { transform: translate(40px, 20px) scale(1.1); }
+  100% { transform: translate(0, 0) scale(1); }
 }
+
+@keyframes sparkle-spin {
+  0%   { transform: rotate(0deg) scale(1); opacity: 0.6; }
+  50%  { transform: rotate(180deg) scale(1.3); opacity: 1; }
+  100% { transform: rotate(360deg) scale(1); opacity: 0.6; }
+}
+
+@keyframes scissor-snip {
+  0%, 100% { transform: rotate(-10deg) scale(1); }
+  50%       { transform: rotate(10deg) scale(1.05); }
+}
+
+@keyframes ribbon-wave {
+  0%   { transform: skewX(-5deg) translateX(0); }
+  50%  { transform: skewX(5deg) translateX(10px); }
+  100% { transform: skewX(-5deg) translateX(0); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes star-twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50%       { opacity: 1;   transform: scale(1.2); }
+}
+
+.animate-glow-pulse   { animation: glow-pulse 3s ease-in-out infinite; }
+.animate-float        { animation: float 5s ease-in-out infinite; }
+.animate-float-reverse{ animation: float-reverse 6s ease-in-out infinite; }
+.animate-shimmer      { animation: shimmer 2s infinite; }
+.animate-gradient-shift { animation: gradient-shift 6s ease infinite; background-size: 200% 200%; }
+.animate-orb-drift    { animation: orb-drift 12s ease-in-out infinite; }
+.animate-orb-drift-2  { animation: orb-drift-2 15s ease-in-out infinite; }
+.animate-sparkle-spin { animation: sparkle-spin 4s linear infinite; }
+.animate-scissor-snip { animation: scissor-snip 2s ease-in-out infinite; }
+.animate-ribbon-wave  { animation: ribbon-wave 4s ease-in-out infinite; }
+.animate-star-twinkle { animation: star-twinkle 2.5s ease-in-out infinite; }
