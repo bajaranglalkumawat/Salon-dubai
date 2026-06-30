@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MapPin, Phone, Clock, Star, ChevronRight, Menu, X } from 'lucide-react';
+import { MapPin, Phone, Clock, Star, ChevronRight, Menu, X, Sparkles, Scissors, Brush, Droplet, Palette, Zap, Hand, Heart } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Index() {
@@ -34,14 +34,14 @@ export default function Index() {
   };
 
   const services = [
-    { name: 'Hair Styling', icon: '💇' },
-    { name: 'Hair Cutting', icon: '✂️' },
-    { name: 'Hair Coloring', icon: '🎨' },
-    { name: 'Facial Treatments', icon: '✨' },
-    { name: 'Skin Care', icon: '🧴' },
-    { name: 'Makeup Services', icon: '💄' },
-    { name: 'Manicure & Pedicure', icon: '💅' },
-    { name: 'Bridal Beauty Packages', icon: '💐' },
+    { name: 'Hair Styling', Icon: Sparkles },
+    { name: 'Hair Cutting', Icon: Scissors },
+    { name: 'Hair Coloring', Icon: Palette },
+    { name: 'Facial Treatments', Icon: Brush },
+    { name: 'Skin Care', Icon: Droplet },
+    { name: 'Makeup Services', Icon: Zap },
+    { name: 'Manicure & Pedicure', Icon: Hand },
+    { name: 'Bridal Beauty Packages', Icon: Heart },
   ];
 
   const containerVariants = {
@@ -67,7 +67,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white shadow-md">
+      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-white/20 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 bg-gold-500 rounded-lg flex items-center justify-center">
@@ -95,7 +95,7 @@ export default function Index() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200 py-4 px-4">
+          <div className="md:hidden bg-white/90 backdrop-blur-xl border-t border-white/20 py-4 px-4">
             <div className="flex flex-col gap-4">
               <button onClick={() => scrollToSection('services')} className="text-left text-gray-700 hover:text-gold-500 font-medium">Services</button>
               <button onClick={() => scrollToSection('about')} className="text-left text-gray-700 hover:text-gold-500 font-medium">About</button>
@@ -107,10 +107,11 @@ export default function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 z-0" />
-        <div className="absolute top-20 right-0 w-96 h-96 bg-gold-100 rounded-full filter blur-3xl opacity-40 z-0" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold-100 rounded-full filter blur-3xl opacity-40 z-0" />
+      <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-br from-white via-gray-50 to-gray-100">
+        <div className="absolute inset-0 backdrop-blur-3xl z-0" />
+        <div className="absolute top-20 right-0 w-96 h-96 bg-gold-200 rounded-full filter blur-3xl opacity-30 z-0 animate-pulse" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold-200 rounded-full filter blur-3xl opacity-30 z-0 animate-pulse" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-t from-white/50 to-transparent z-0" />
 
         <div className="max-w-6xl mx-auto px-4 md:px-8 z-10">
           <motion.div
@@ -193,14 +194,25 @@ export default function Index() {
             viewport={{ once: true }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
           >
-            {services.map((service, index) => (
-              <motion.div key={index} variants={itemVariants}>
-                <div className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-8 text-center hover:shadow-xl transition hover:border-gold-300 group cursor-pointer">
-                  <div className="text-5xl mb-4 transform group-hover:scale-110 transition">{service.icon}</div>
-                  <h3 className="font-semibold text-black text-lg">{service.name}</h3>
-                </div>
-              </motion.div>
-            ))}
+            {services.map((service, index) => {
+              const { Icon } = service;
+              return (
+                <motion.div key={index} variants={itemVariants}>
+                  <div className="relative group cursor-pointer">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gold-400 to-gold-600 rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition duration-500" />
+                    <div className="relative bg-white/40 backdrop-blur-md border border-white/20 rounded-xl p-8 text-center hover:bg-white/50 transition duration-500 hover:border-gold-300/40">
+                      <div className="relative mb-6">
+                        <div className="absolute inset-0 bg-gradient-to-br from-gold-400 to-gold-500 rounded-lg opacity-0 group-hover:opacity-100 transition duration-500 blur" />
+                        <div className="relative w-16 h-16 mx-auto bg-gradient-to-br from-gold-400 to-gold-500 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition duration-500">
+                          <Icon className="text-white" size={32} />
+                        </div>
+                      </div>
+                      <h3 className="font-semibold text-black text-lg group-hover:text-gold-600 transition">{service.name}</h3>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </section>
@@ -214,9 +226,11 @@ export default function Index() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <div className="aspect-square bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-white text-6xl">
-                  ✨
+              <div className="relative rounded-2xl overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-gold-400 via-gold-500 to-gold-600 animate-pulse" />
+                <div className="relative aspect-square bg-gradient-to-br from-gold-400/80 to-gold-600/80 backdrop-blur-sm flex items-center justify-center group">
+                  <Sparkles className="text-white" size={80} className="animate-spin group-hover:animate-pulse" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
                 </div>
               </div>
             </motion.div>
@@ -292,24 +306,28 @@ export default function Index() {
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
             {[
-              { emoji: '💇', title: 'Hair Services' },
-              { emoji: '✨', title: 'Facial Treatments' },
-              { emoji: '💅', title: 'Nail Care' },
-              { emoji: '💄', title: 'Makeup' },
-              { emoji: '🧴', title: 'Skincare' },
-              { emoji: '💐', title: 'Bridal Packages' },
-            ].map((item, index) => (
-              <motion.div key={index} variants={itemVariants}>
-                <div className="relative group rounded-xl overflow-hidden shadow-lg cursor-pointer">
-                  <div className="aspect-square bg-gradient-to-br from-gold-300 to-gold-500 flex items-center justify-center text-7xl group-hover:scale-110 transition transform duration-300">
-                    {item.emoji}
+              { Icon: Scissors, title: 'Hair Services' },
+              { Icon: Brush, title: 'Facial Treatments' },
+              { Icon: Hand, title: 'Nail Care' },
+              { Icon: Palette, title: 'Makeup' },
+              { Icon: Droplet, title: 'Skincare' },
+              { Icon: Heart, title: 'Bridal Packages' },
+            ].map((item, index) => {
+              const { Icon } = item;
+              return (
+                <motion.div key={index} variants={itemVariants}>
+                  <div className="relative group rounded-xl overflow-hidden cursor-pointer h-64">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gold-400 to-gold-600 opacity-0 group-hover:opacity-100 transition duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-gold-300 to-gold-500 flex items-center justify-center group-hover:scale-110 transition transform duration-500">
+                      <Icon className="text-white" size={64} />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
+                      <h3 className="text-white font-semibold text-lg">{item.title}</h3>
+                    </div>
                   </div>
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition flex items-end p-4">
-                    <h3 className="text-white font-semibold opacity-0 group-hover:opacity-100 transition">{item.title}</h3>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </section>
@@ -335,7 +353,7 @@ export default function Index() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             onSubmit={handleBooking}
-            className="bg-gray-800 rounded-2xl p-8 space-y-6"
+            className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 space-y-6 shadow-2xl hover:bg-white/15 transition duration-500"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -346,7 +364,7 @@ export default function Index() {
                   value={formData.name}
                   onChange={handleFormChange}
                   required
-                  className="w-full bg-gray-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-500"
+                  className="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:bg-white/20 transition placeholder-white/50"
                   placeholder="Your name"
                 />
               </div>
@@ -358,7 +376,7 @@ export default function Index() {
                   value={formData.phone}
                   onChange={handleFormChange}
                   required
-                  className="w-full bg-gray-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-500"
+                  className="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:bg-white/20 transition placeholder-white/50"
                   placeholder="+971 56 462 9378"
                 />
               </div>
@@ -372,7 +390,7 @@ export default function Index() {
                   value={formData.service}
                   onChange={handleFormChange}
                   required
-                  className="w-full bg-gray-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-500"
+                  className="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:bg-white/20 transition"
                 >
                   <option value="">Select a service</option>
                   {services.map((service) => (
@@ -390,7 +408,7 @@ export default function Index() {
                   value={formData.date}
                   onChange={handleFormChange}
                   required
-                  className="w-full bg-gray-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-500"
+                  className="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:bg-white/20 transition"
                 />
               </div>
             </div>
@@ -403,7 +421,7 @@ export default function Index() {
                 value={formData.time}
                 onChange={handleFormChange}
                 required
-                className="w-full bg-gray-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-500"
+                className="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:bg-white/20 transition"
               />
             </div>
 
@@ -440,8 +458,11 @@ export default function Index() {
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
           >
             <motion.div variants={itemVariants} className="text-center">
-              <div className="w-16 h-16 bg-gold-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin className="text-white" size={28} />
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-gold-400 to-gold-500 rounded-full opacity-0 group-hover:opacity-30 blur-xl transition duration-500 w-16 h-16 mx-auto" />
+                <div className="relative w-16 h-16 bg-gradient-to-br from-gold-400 to-gold-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl transition duration-500">
+                  <MapPin className="text-white" size={28} />
+                </div>
               </div>
               <h3 className="font-semibold text-black text-lg mb-2">Location</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -452,8 +473,11 @@ export default function Index() {
             </motion.div>
 
             <motion.div variants={itemVariants} className="text-center">
-              <div className="w-16 h-16 bg-gold-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone className="text-white" size={28} />
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-gold-400 to-gold-500 rounded-full opacity-0 group-hover:opacity-30 blur-xl transition duration-500 w-16 h-16 mx-auto" />
+                <div className="relative w-16 h-16 bg-gradient-to-br from-gold-400 to-gold-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl transition duration-500">
+                  <Phone className="text-white" size={28} />
+                </div>
               </div>
               <h3 className="font-semibold text-black text-lg mb-2">Phone</h3>
               <a href="tel:+971564629378" className="text-gray-600 hover:text-gold-500 font-semibold transition">
@@ -463,8 +487,11 @@ export default function Index() {
             </motion.div>
 
             <motion.div variants={itemVariants} className="text-center">
-              <div className="w-16 h-16 bg-gold-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="text-white" size={28} />
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-gold-400 to-gold-500 rounded-full opacity-0 group-hover:opacity-30 blur-xl transition duration-500 w-16 h-16 mx-auto" />
+                <div className="relative w-16 h-16 bg-gradient-to-br from-gold-400 to-gold-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl transition duration-500">
+                  <Clock className="text-white" size={28} />
+                </div>
               </div>
               <h3 className="font-semibold text-black text-lg mb-2">Hours</h3>
               <p className="text-gray-600 text-sm">
