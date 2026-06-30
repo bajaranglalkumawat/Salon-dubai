@@ -57,6 +57,18 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        gold: {
+          50: "#fffbf0",
+          100: "#fef6e8",
+          200: "#fce4c8",
+          300: "#fad2a3",
+          400: "#f7b85f",
+          500: "#f4a030",
+          600: "#d48c2b",
+          700: "#ad6f24",
+          800: "#8b5521",
+          900: "#72451f",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,10 +92,24 @@ export default {
             height: "0",
           },
         },
+        "fade-in": {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        "slide-up": {
+          from: { transform: "translateY(20px)", opacity: "0" },
+          to: { transform: "translateY(0)", opacity: "1" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 0.6s ease-out",
+        "slide-up": "slide-up 0.6s ease-out",
+      },
+      fontFamily: {
+        sans: ['Poppins', 'system-ui', 'sans-serif'],
+        serif: ['Playfair Display', 'serif'],
       },
     },
   },
